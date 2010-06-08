@@ -50,11 +50,11 @@ class Template
     /**
      * Constructor
      *
-     * @param string $path the path to the templates
+     * @param string $path the path to the templates (defaults to './templates/')
      *
      * @return void
      */
-    function Template($path = null)
+    function Template($path = './templates/')
     {
         $this->path = $path;
         $this->vars = array();
@@ -119,12 +119,12 @@ class Template
 
     /**
      * Open, parse, and return the template file.
-     *
-     * @param string $file the template file name
+     *      *
+     * @param string $file the template file name (defaults to 'index.tpl.php')
      *
      * @return string
      */
-    function fetch($file)
+    function fetch($file = 'index.tpl.php')
     {
         extract($this->vars);          // Extract the vars to local namespace
         ob_start();                    // Start output buffering
